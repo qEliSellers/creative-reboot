@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AmuletsRouteImport } from './routes/amulets'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DivinationRouteImport } from './routes/divination'
+import { Route as MentorshipRouteImport } from './routes/mentorship'
+import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
+import { Route as WritingRouteImport } from './routes/writing'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmuletsRoute = AmuletsRouteImport.update({
+  id: '/amulets',
+  path: '/amulets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DivinationRoute = DivinationRouteImport.update({
+  id: '/divination',
+  path: '/divination',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentorshipRoute = MentorshipRouteImport.update({
+  id: '/mentorship',
+  path: '/mentorship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkWithMeRoute = WorkWithMeRouteImport.update({
+  id: '/work-with-me',
+  path: '/work-with-me',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WritingRoute = WritingRouteImport.update({
+  id: '/writing',
+  path: '/writing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/amulets': typeof AmuletsRoute
+  '/contact': typeof ContactRoute
+  '/divination': typeof DivinationRoute
+  '/mentorship': typeof MentorshipRoute
+  '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/amulets': typeof AmuletsRoute
+  '/contact': typeof ContactRoute
+  '/divination': typeof DivinationRoute
+  '/mentorship': typeof MentorshipRoute
+  '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/amulets': typeof AmuletsRoute
+  '/contact': typeof ContactRoute
+  '/divination': typeof DivinationRoute
+  '/mentorship': typeof MentorshipRoute
+  '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/amulets'
+    | '/contact'
+    | '/divination'
+    | '/mentorship'
+    | '/work-with-me'
+    | '/writing'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/amulets'
+    | '/contact'
+    | '/divination'
+    | '/mentorship'
+    | '/work-with-me'
+    | '/writing'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/amulets'
+    | '/contact'
+    | '/divination'
+    | '/mentorship'
+    | '/work-with-me'
+    | '/writing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AmuletsRoute: typeof AmuletsRoute
+  ContactRoute: typeof ContactRoute
+  DivinationRoute: typeof DivinationRoute
+  MentorshipRoute: typeof MentorshipRoute
+  WorkWithMeRoute: typeof WorkWithMeRoute
+  WritingRoute: typeof WritingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amulets': {
+      id: '/amulets'
+      path: '/amulets'
+      fullPath: '/amulets'
+      preLoaderRoute: typeof AmuletsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/divination': {
+      id: '/divination'
+      path: '/divination'
+      fullPath: '/divination'
+      preLoaderRoute: typeof DivinationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentorship': {
+      id: '/mentorship'
+      path: '/mentorship'
+      fullPath: '/mentorship'
+      preLoaderRoute: typeof MentorshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work-with-me': {
+      id: '/work-with-me'
+      path: '/work-with-me'
+      fullPath: '/work-with-me'
+      preLoaderRoute: typeof WorkWithMeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/writing': {
+      id: '/writing'
+      path: '/writing'
+      fullPath: '/writing'
+      preLoaderRoute: typeof WritingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AmuletsRoute: AmuletsRoute,
+  ContactRoute: ContactRoute,
+  DivinationRoute: DivinationRoute,
+  MentorshipRoute: MentorshipRoute,
+  WorkWithMeRoute: WorkWithMeRoute,
+  WritingRoute: WritingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
