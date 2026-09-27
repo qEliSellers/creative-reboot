@@ -1,11 +1,11 @@
 {
-  "asset_id": "bb22869e-a6a9-476c-8403-11669b3be08e",
-  "content_type": "image/png",
-  "created_at": "2026-06-19T03:41:20Z",
+  "version": 1,
+  "asset_id": "ee36c6ad-b77e-4b80-bc8d-393008df0d08",
+  "project_id": "7c6d782e-819c-4601-9f62-f87d9895cc74",
+  "url": "/__l5e/assets-v1/ee36c6ad-b77e-4b80-bc8d-393008df0d08/spiral_writing_trans.png",
+  "r2_key": "a/v1/7c6d782e-819c-4601-9f62-f87d9895cc74/ee36c6ad-b77e-4b80-bc8d-393008df0d08/spiral_writing_trans.png",
   "original_filename": "spiral_writing_trans.png",
-  "project_id": "ab56b1dd-23ec-423f-a069-96f4837b58fb",
-  "r2_key": "a/v1/ab56b1dd-23ec-423f-a069-96f4837b58fb/bb22869e-a6a9-476c-8403-11669b3be08e/spiral_writing_trans.png",
   "size": 92262,
-  "url": "/__l5e/assets-v1/bb22869e-a6a9-476c-8403-11669b3be08e/spiral_writing_trans.png",
-  "version": 1
+  "content_type": "image/png",
+  "created_at": "2026-09-27T22:02:00Z"
 }

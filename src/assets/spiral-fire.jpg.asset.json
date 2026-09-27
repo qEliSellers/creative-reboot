@@ -1,11 +1,11 @@
 {
-  "asset_id": "7e5455f9-8b49-4cc4-b4d1-45020e7c4e4a",
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-19T02:58:08Z",
+  "version": 1,
+  "asset_id": "d4779dfb-9ff9-492e-b90b-5334f3df8981",
+  "project_id": "7c6d782e-819c-4601-9f62-f87d9895cc74",
+  "url": "/__l5e/assets-v1/d4779dfb-9ff9-492e-b90b-5334f3df8981/spiral-fire.jpg",
+  "r2_key": "a/v1/7c6d782e-819c-4601-9f62-f87d9895cc74/d4779dfb-9ff9-492e-b90b-5334f3df8981/spiral-fire.jpg",
   "original_filename": "spiral-fire.jpg",
-  "project_id": "ab56b1dd-23ec-423f-a069-96f4837b58fb",
-  "r2_key": "a/v1/ab56b1dd-23ec-423f-a069-96f4837b58fb/7e5455f9-8b49-4cc4-b4d1-45020e7c4e4a/spiral-fire.jpg",
   "size": 6821,
-  "url": "/__l5e/assets-v1/7e5455f9-8b49-4cc4-b4d1-45020e7c4e4a/spiral-fire.jpg",
-  "version": 1
+  "content_type": "image/jpeg",
+  "created_at": "2026-09-27T22:01:48Z"
 }
