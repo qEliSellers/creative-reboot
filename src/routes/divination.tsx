@@ -26,10 +26,10 @@ const offerings = [
 ];
 
 const faqs = [
-  ["Do I need to know anything about tarot?", "Not a thing. The reading is a conversation; the cards are a vocabulary I translate."],
+  ["What if I need help forming a question?", "That’s actually common. In order to get a clear answer, you need to have a clearly worded question. I can help you craft your question."],
+  ["Do I need to know anything about tarot or oracles?", "Not a thing. The reading is a conversation; the cards are a vocabulary I translate."],
   ["Is this fortune-telling?", "No. I read the present truthfully so you can choose the next thing well."],
-  ["Where do sessions happen?", "Over a quiet video call, which is recorded for you to keep."],
-  ["What if I cry?", "You won't be the first. There is tea."],
+  ["Where do sessions happen?", "Over a quiet phone call, which is recorded for you to keep."],
 ];
 
 const steps = [
@@ -84,7 +84,7 @@ function DivinationPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-24 lg:px-12">
-        <div className="eyebrow text-center">Honest questions, honest answers</div>
+        <div className="eyebrow text-center">Honest Question, Honest Answers</div>
         <SpiralDivider className="mt-4 mb-12" />
         <dl className="space-y-8">
           {faqs.map(([q, a]) => (
