@@ -1,11 +1,11 @@
 {
-  "asset_id": "05beefdf-a003-4ecc-a68f-a3e30be81082",
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-19T02:12:13Z",
+  "version": 1,
+  "asset_id": "57dfdaae-fe75-43cc-a431-6a187de5457f",
+  "project_id": "7c6d782e-819c-4601-9f62-f87d9895cc74",
+  "url": "/__l5e/assets-v1/57dfdaae-fe75-43cc-a431-6a187de5457f/writing-myself.jpg",
+  "r2_key": "a/v1/7c6d782e-819c-4601-9f62-f87d9895cc74/57dfdaae-fe75-43cc-a431-6a187de5457f/writing-myself.jpg",
   "original_filename": "writing-myself.jpg",
-  "project_id": "ab56b1dd-23ec-423f-a069-96f4837b58fb",
-  "r2_key": "a/v1/ab56b1dd-23ec-423f-a069-96f4837b58fb/05beefdf-a003-4ecc-a68f-a3e30be81082/writing-myself.jpg",
   "size": 11482,
-  "url": "/__l5e/assets-v1/05beefdf-a003-4ecc-a68f-a3e30be81082/writing-myself.jpg",
-  "version": 1
+  "content_type": "image/jpeg",
+  "created_at": "2026-09-27T22:02:06Z"
 }

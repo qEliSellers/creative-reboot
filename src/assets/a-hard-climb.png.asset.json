@@ -1,11 +1,11 @@
 {
-  "asset_id": "27c5f38e-b0e4-4a83-bb2e-a5577b66db62",
-  "content_type": "image/png",
-  "created_at": "2026-06-19T02:12:10Z",
+  "version": 1,
+  "asset_id": "6001b2ac-2412-40b5-9ada-c91be6d36bea",
+  "project_id": "7c6d782e-819c-4601-9f62-f87d9895cc74",
+  "url": "/__l5e/assets-v1/6001b2ac-2412-40b5-9ada-c91be6d36bea/a-hard-climb.png",
+  "r2_key": "a/v1/7c6d782e-819c-4601-9f62-f87d9895cc74/6001b2ac-2412-40b5-9ada-c91be6d36bea/a-hard-climb.png",
   "original_filename": "a-hard-climb.png",
-  "project_id": "ab56b1dd-23ec-423f-a069-96f4837b58fb",
-  "r2_key": "a/v1/ab56b1dd-23ec-423f-a069-96f4837b58fb/27c5f38e-b0e4-4a83-bb2e-a5577b66db62/a-hard-climb.png",
   "size": 191190,
-  "url": "/__l5e/assets-v1/27c5f38e-b0e4-4a83-bb2e-a5577b66db62/a-hard-climb.png",
-  "version": 1
+  "content_type": "image/png",
+  "created_at": "2026-09-27T22:01:04Z"
 }
