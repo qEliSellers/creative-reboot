@@ -30,7 +30,8 @@ const faqs = [
   ["What if I need help forming a question?", "That’s actually common. In order to get a clear answer, you need to have a clearly worded question. I can help you craft your question."],
   ["Do I need to know anything about tarot or oracles?", "Not a thing. The reading is a conversation; the cards are a vocabulary I translate."],
   ["Is this fortune-telling?", "No. I read the present truthfully so you can choose the next thing well."],
-  ["Where do sessions happen?", "Over a quiet phone call, which is recorded for you to keep."],
+  ["Where do sessions happen?", "Over a quiet phone call, which is recorded for you to keep. You will receive a photo of the cards as well to refer to."],
+  ["What about Zoom?", "I hear spirit best when I am not distracted. The zoom camera is a distraction."],
 ];
 
 const steps = [
