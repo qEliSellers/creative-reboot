@@ -1,52 +1,43 @@
 ## Goal
 
-Refresh the site's visual layer to match the v2 design system in the uploaded zip. Tokens, fonts, and brand imagery only — no route/content restructuring, no backend work.
+Update the Divination FAQ, turn the Amulets page into a clean migration-ready shop structure, and add the held Academic Writing page.
 
-## What changes
+## Changes
 
-### 1. Design tokens (`src/styles.css`)
-Recalibrate to v2's cooler, more editorial palette (currently warmer/greener):
+### 1. Divination FAQ
 
-- **Neutrals** → cooler linen scale: page `#F1EFEA`, card `#FAF9F5`, panel `#E8E4DB`.
-- **Forest** softened: primary `#3A4634` (was oklch ~#34432D), deep `#2B3627`.
-- **Gold** softened: `#B0904E` primary, `#97793C` strong, `#DCC79B` soft.
-- **New teal accent** (`--teal-500..700`, semantic `--brand-emphasis` = `#235568`) — italic emphasis words (e.g. *wholly*) and Divination pathway shift from sage-green to teal.
-- **Ink** warm charcoal `#24231E` / muted `#6A6557`.
-- **Shadows** replaced with v2's warm charcoal-green tinted scale (`--shadow-card`, `--shadow-md`, `--shadow-lg`).
-- Keep the existing `@theme inline` shadcn mapping; just update the underlying `--cream/--forest/--gold/--ink/...` variables and add `--teal` + `--brand-emphasis`.
+- Change the section heading exactly to **“Honest Question, Honest Answers.”**
+- Replace the FAQ list with the four supplied questions and answers, preserving the supplied wording and order.
+- Add the new question-forming guidance and change sessions from video to a recorded phone call.
 
-### 2. Typography
-- Swap body font from **Work Sans → Jost** (display stays Cormorant Garamond).
-- Load via `<link>` in `src/routes/__root.tsx` head (per project rules — no remote `@import` in styles.css).
-- Update `--font-sans` in styles.css.
+### 2. Amulets shop structure
 
-### 3. Italic emphasis color
-Add a small utility so italic emphasis words in display headings render in `--brand-emphasis` (teal). Apply to existing spots that already use `<em className="italic">` (home hero, contact header, etc.) — swap the class, no copy changes.
+- Treat the existing eight products as temporary demo content and remove them from the visible shop.
+- Define two future catalog categories with stable slugs:
+  - **Amulets**
+  - **Prayer Beads / Mala Beads**
+- Make the category tabs functional, accessible controls with a clear active state and an empty result state for each category.
+- Add a reusable product data/card template behind the empty catalog so later WordPress/SureCart products can populate the same grid without redesigning the page.
+- Keep this as frontend structure only; no SureCart connection will be attempted before the WordPress migration.
+- Replace “(link to contact me page)” in the commissioned-creations paragraph with a real **Contact** link.
 
-### 4. Imagery refresh
-Replace current hero/pathway/band imagery with the v2 assets from the zip (better fidelity, match mockup). Upload via `lovable-assets` and replace the `.asset.json` pointers:
+### 3. Academic Writing page
 
-- `hero-spiral` → `assets/imagery/hero-spiral.jpg`
-- `spiral-writing` → `path-writing.jpg`
-- `spiral-divination` → `path-divination.jpg`
-- `spiral-amulets` → `path-amulets.jpg`
-- `spiral-creativity` → `path-mentorship.jpg`
-- `spiral-air/water/earth/fire` → v2 versions (already present but updated crops)
-- Add `band-spiral-book.jpg` for the "Story. Symbol. Intention. Creation." dark band on home.
+- Add a dedicated `/academic` page titled **“Marya Summers Complete CV.”**
+- Show the CV area in a held state without inventing or linking an outdated PDF; the corrected PDF can be dropped into the prepared slot when Marya supplies it.
+- Add an **Academic Writing / Complete CV** entry on the Writing page so the subpage is discoverable.
+- Give `/academic` its own page title, description, Open Graph metadata, and social-card metadata consistent with the rest of the site.
 
-Old assets deleted via `lovable-assets delete` once references are swapped.
+## Technical details
 
-### 5. Component polish (visual only)
-- `Buttons.tsx`: keep pill shape; ensure gold outline hover → gold fill matches spec (already close).
-- `PathwayCard.tsx`: verify shadow tokens now resolve to the warmer values automatically via CSS vars (no code change expected).
-- `SiteHeader.tsx` / `SiteFooter.tsx`: no structural changes; they inherit the new tokens.
-
-## Out of scope
-
-- No new routes, no copy rewrites, no contact-form backend work (that's the separate task from earlier).
-- No shadcn component overhauls.
-- SKILL.md/design-guide HTML from the zip is reference only — not copied into the repo.
+- Keep catalog categories and products as typed data so they map cleanly to future SureCart category/product records.
+- Use the existing visual language, tokens, typography, and shared link controls.
+- Create the new route through the existing file-based routing system; generated route files remain untouched.
 
 ## Verification
 
-Run `bun run build`; visit `/`, `/about`, `/writing`, `/amulets`, `/work-with-me`, `/contact` in Playwright and screenshot each to confirm palette, font, italic teal emphasis, and new imagery match the mockup.
+- Check the exact Divination wording in the rendered page.
+- Click both shop categories and confirm each active/empty state works.
+- Confirm the commissioned-creations link opens Contact.
+- Open `/academic` from Writing and confirm the held CV state has no broken PDF link.
+- Check desktop and mobile layouts, then confirm the preview reports no build or browser errors.
