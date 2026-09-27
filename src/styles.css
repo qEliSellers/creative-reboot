@@ -5,17 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * Wholly Creative — Design System v2.
+ * Tokens synced from WhollyCreative_designSys_files_v2.
+ * Cooler linen grounds, softened forest, aged gold, and a new teal accent
+ * (brand-emphasis) drawn from the water in the brand imagery.
  */
 
 @theme inline {
@@ -59,29 +52,61 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-cream: var(--cream);
+  --color-cream-soft: var(--cream-soft);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ink: var(--ink);
+  --color-sage: var(--sage);
+  --color-stone: var(--stone);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-emphasis: var(--brand-emphasis);
+  --font-display: "Cormorant Garamond", "Hoefler Text", Georgia, serif;
+  --font-sans: "Jost", "Century Gothic", "Futura", system-ui, sans-serif;
+  --shadow-card: 0 2px 10px rgba(46, 44, 34, 0.07), 0 1px 2px rgba(46, 44, 34, 0.05);
+  --shadow-md: 0 6px 22px rgba(40, 38, 28, 0.09);
+  --shadow-lg: 0 20px 52px rgba(36, 40, 28, 0.14);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 0.5rem;
+
+  /* Brand palette — v2 (cooler linen, softer forest, teal accent) */
+  --cream: #F1EFEA;         /* surface page */
+  --cream-soft: #FAF9F5;    /* surface card */
+  --forest: #3A4634;        /* forest-700 */
+  --forest-deep: #2B3627;   /* forest-800 */
+  --gold: #B0904E;          /* gold-500 */
+  --gold-soft: #DCC79B;     /* gold-300 */
+  --ink: #24231E;           /* ink-900 */
+  --sage: #5E6E4C;          /* sage-500, used sparingly */
+  --stone: #E8E4DB;         /* linen-200 panel */
+  --teal: #235568;          /* teal-600 — brand emphasis */
+  --teal-soft: #7BA8B8;     /* teal-300 */
+  --brand-emphasis: var(--teal);
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--cream-soft);
+  --card-foreground: var(--ink);
+  --popover: var(--cream-soft);
+  --popover-foreground: var(--ink);
+  --primary: var(--forest);
+  --primary-foreground: var(--cream);
+  --secondary: var(--stone);
+  --secondary-foreground: var(--forest);
+  --muted: var(--stone);
+  --muted-foreground: #6A6557;
+  --accent: var(--gold);
+  --accent-foreground: var(--cream);
+  --destructive: oklch(0.55 0.18 28);
+  --destructive-foreground: var(--cream);
+  --border: #DBD5C7;        /* linen-300 */
+  --input: #DBD5C7;
+  --ring: var(--gold);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +165,23 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-feature-settings: "ss01", "ss02";
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-forest);
   }
 }

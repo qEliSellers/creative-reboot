@@ -1,24 +1,153 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroSpiralAsset from "../assets/hero-spiral-clean.png.asset.json";
+const heroSpiral = heroSpiralAsset.url;
+import darkBandAsset from "../assets/band-spiral-book.jpg.asset.json";
+const darkBand = darkBandAsset.url;
+import pathWriting from "../assets/path-writing.jpg";
+import pathDivination from "../assets/path-divination.jpg";
+import pathAmulets from "../assets/path-amulets.jpg";
+import pathMentorship from "../assets/path-mentorship.jpg";
+import spiralWriting from "../assets/spiral-writing.png.asset.json";
+import spiralDivination from "../assets/spiral-divination.png.asset.json";
+import spiralAmulets from "../assets/spiral-amulets.png.asset.json";
+import spiralCreativity from "../assets/spiral-creativity.png.asset.json";
+import { PathwayCard } from "../components/PathwayCard";
+import { PrimaryLink, OutlineLink } from "../components/Buttons";
+import { SpiralDivider } from "../components/Spiral";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Wholly Creative — Marya Summers" },
+      { name: "description", content: "Where story, spirit, and creativity meet. Writing, divination, amulets, and creative mentorship with Marya Summers." },
+      { property: "og:title", content: "Wholly Creative — Marya Summers" },
+      { property: "og:description", content: "Be rooted. Be expansive. Be wholly creative." },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const pathways = [
+  { to: "/writing", image: pathWriting, title: "Writing", blurb: "Books, essays, poetry & publications." },
+  { to: "/divination", image: pathDivination, title: "CONSULTING & TEACHING", blurb: "Tarot, oracle & intuitive guidance. (?)" },
+  { to: "/amulets", image: pathAmulets, title: "CARD READINGS", blurb: "Handcrafted talismans & sacred objects. (?)" },
+  { to: "/mentorship", image: pathMentorship, title: "SACRED OBJECTS", blurb: "Coaching for writers, artists & seekers. (?)" },
+] as const;
+
+const elements = [
+  { name: "Writing", image: spiralWriting.url, line1: "Ink flows.", line2: "Stories take shape." },
+  { name: "Divination", image: spiralDivination.url, line1: "Intuition moves.", line2: "Truth is revealed." },
+  { name: "Amulets", image: spiralAmulets.url, line1: "Intention roots.", line2: "Energy protects." },
+  { name: "Creativity", image: spiralCreativity.url, line1: "Imagination ignites.", line2: "Expression transforms." },
+];
+
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 pt-12 pb-24 lg:grid-cols-[1.05fr_1fr] lg:px-12 lg:pt-20">
+        <div>
+          <div className="flex items-center gap-3 text-gold">
+            <svg viewBox="0 0 12 12" className="h-3 w-3" aria-hidden="true">
+              <path d="M6 0 L7 5 L12 6 L7 7 L6 12 L5 7 L0 6 L5 5 Z" fill="currentColor" />
+            </svg>
+            <div className="eyebrow">Where story, spirit, and creativity meet.</div>
+          </div>
+          <h1 className="mt-8 font-display text-4xl leading-[1.05] text-forest md:text-5xl lg:text-[3.625rem]">
+            Be rooted.
+            <br />
+            Be expansive.
+            <br />
+            Be <em className="font-display italic text-teal">wholly</em> creative.
+          </h1>
+          <SpiralDivider className="my-8 justify-start" />
+          <p className="max-w-md text-base leading-[1.85] text-ink/75">
+            I help creative souls reconnect with their inner wisdom, tell their stories, and bring
+            meaningful ideas to life through writing, intuitive guidance, handcrafted amulets, and
+            creative mentorship.
+          </p>
+          <div className="mt-10">
+            <PrimaryLink to="/about">Explore my work</PrimaryLink>
+          </div>
+        </div>
+        <div className="relative">
+          <img
+            src={heroSpiral}
+            alt="A spiral of vines, blossoms, and teal water with a golden thread"
+            width={1024}
+            height={1024}
+            className="w-full"
+          />
+        </div>
+      </section>
+
+      <section className="bg-stone/50 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="text-center">
+            <div className="eyebrow">Four pathways. One purpose.</div>
+            <SpiralDivider className="mt-5" />
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {pathways.map((p) => (
+              <PathwayCard key={p.to} {...p} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="grid items-stretch overflow-hidden md:grid-cols-2">
+        <div className="bg-forest px-8 py-20 text-cream md:px-16 lg:py-28">
+          <div className="mx-auto max-w-md">
+            <div className="eyebrow text-cream/80">Story. Symbol. Intention. Creation.</div>
+            <SpiralDivider className="my-7 justify-start text-gold-soft" />
+            <h2 className="font-display text-4xl leading-tight text-cream md:text-5xl">
+              Different expressions.
+              <br />
+              The same dynamic.
+              <br />
+              <em className="italic text-gold-soft">Truth & transformation.</em>
+            </h2>
+            <p className="mt-8 max-w-sm text-sm leading-relaxed text-cream/75">
+              Whatever path you choose — the page, the cards, the stone, the conversation —
+              you are met by the same spiral. It is the shape of becoming.
+            </p>
+            <div className="mt-10">
+              <OutlineLink to="/about">Discover the whole</OutlineLink>
+            </div>
+          </div>
+        </div>
+        <div
+          className="min-h-[28rem] bg-cover bg-center"
+          style={{ backgroundImage: `url(${darkBand})` }}
+          aria-hidden
+        />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-12">
+        <div className="flex items-center gap-6">
+          <div className="eyebrow whitespace-nowrap">The spiral in everything</div>
+          <div className="h-px flex-1 bg-gold/60" />
+        </div>
+        <div className="mt-14 grid grid-cols-2 gap-10 text-center sm:grid-cols-4">
+          {elements.map((el) => (
+            <div key={el.name} className="flex flex-col items-center">
+              <img
+                src={el.image}
+                alt={`${el.name} spiral motif`}
+                loading="lazy"
+                className="aspect-square w-full max-w-[180px] object-contain"
+              />
+              <div className="mt-6 font-display text-xs uppercase tracking-[0.22em] text-forest">
+                {el.name}
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-ink/70 md:text-sm">
+                {el.line1}
+                <br />
+                {el.line2}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
