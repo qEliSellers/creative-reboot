@@ -12,6 +12,8 @@ export const Route = createFileRoute("/writing")({
       { name: "description", content: "Books, essays, and poems by Marya Summers." },
       { property: "og:title", content: "Writing & Publications — Marya Summers" },
       { property: "og:description", content: "Books, essays, and poems by Marya Summers." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: WritingPage,
@@ -226,6 +228,20 @@ function WritingPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-6 py-20 lg:px-12">
+        <div className="eyebrow">Academic Writing</div>
+        <SpiralDivider className="mt-4 mb-8 justify-start" />
+        <div className="flex flex-col items-start justify-between gap-8 border-y border-border py-8 md:flex-row md:items-center">
+          <div>
+            <h2 className="font-display text-3xl text-forest">Marya Summers Complete CV</h2>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/70">
+              Academic work, teaching, publications, and professional experience.
+            </p>
+          </div>
+          <PrimaryLink to="/academic">View Academic Writing</PrimaryLink>
         </div>
       </section>
 
