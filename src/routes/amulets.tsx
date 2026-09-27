@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHeader } from "../components/PageHeader";
 import { SpiralDivider } from "../components/Spiral";
-import pathAmulets from "../assets/path-amulets.jpg";
 
 export const Route = createFileRoute("/amulets")({
   head: () => ({
@@ -11,7 +10,8 @@ export const Route = createFileRoute("/amulets")({
       { name: "description", content: "Handcrafted talismans and small sacred objects by Marya Summers." },
       { property: "og:title", content: "Amulets — Marya Summers" },
       { property: "og:description", content: "Handcrafted talismans and small sacred objects." },
-      { property: "og:image", content: pathAmulets },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: AmuletsPage,

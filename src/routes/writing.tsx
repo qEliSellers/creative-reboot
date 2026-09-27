@@ -12,6 +12,8 @@ export const Route = createFileRoute("/writing")({
       { name: "description", content: "Books, essays, and poems by Marya Summers." },
       { property: "og:title", content: "Writing & Publications — Marya Summers" },
       { property: "og:description", content: "Books, essays, and poems by Marya Summers." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: WritingPage,
