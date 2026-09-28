@@ -10,7 +10,7 @@ import spiralDivination from "../assets/spiral_divination_trans.webp";
 import spiralAmulets from "../assets/spiral_amulets_trans.webp";
 import spiralCreativity from "../assets/spiral_creativity_trans.webp";
 import { PathwayCard } from "../components/PathwayCard";
-import { PrimaryLink, OutlineLink } from "../components/Buttons";
+import { GhostButton, PrimaryLink, OutlineLink } from "../components/Buttons";
 import { SpiralDivider } from "../components/Spiral";
 
 export const Route = createFileRoute("/")({
@@ -97,8 +97,16 @@ function Home() {
             meaningful ideas to life through writing, intuitive guidance, handcrafted amulets, and
             creative mentorship.
           </p>
-          <div className="mt-10">
-            <PrimaryLink to="/about">Explore my work</PrimaryLink>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <PrimaryLink to="/approach">Explore the Method</PrimaryLink>
+            <GhostButton
+              type="button"
+              disabled
+              aria-disabled="true"
+              title="Booking will open when Cal.com is connected"
+            >
+              Begin the Journey
+            </GhostButton>
           </div>
         </div>
         <div className="relative">

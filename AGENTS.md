@@ -11,3 +11,4 @@
 
 - Keep the Amulets catalog as typed category/product data so it can map directly to SureCart after WordPress migration; until then, categories remain visible with an empty catalog state.
 - Mount TanStack ScrollRestoration in the root layout so internal page navigation reliably starts at the expected position.
+- Keep “Begin the Journey” unavailable until Cal.com is integrated, and replace the interim Writing mailto signup with SureContact during the WordPress migration.

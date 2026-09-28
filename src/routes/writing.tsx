@@ -278,8 +278,8 @@ function PubCard({ pub: b, index }: { pub: Pub; index: number }) {
 
 /**
  * Interim notify signup while the site has no backend: composes a prefilled
- * email to Marya (same pattern as the contact form). Swap for a real
- * email-capture service during the WordPress / SureCart migration.
+ * email to Marya (same pattern as the contact form). Swap for the planned
+ * SureContact form during the WordPress migration.
  */
 function NotifyForm() {
   const [email, setEmail] = useState("");
@@ -344,13 +344,9 @@ function WritingPage() {
           just moving this one <section> block. */}
       <section className="bg-forest text-cream">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center lg:px-12">
-          <div className="eyebrow text-gold">Coming soon</div>
-          <p className="mt-6 font-display text-4xl italic leading-snug md:text-5xl">
-            Darkscapes with Indigenous Light
-          </p>
-          <p className="mt-3 font-display text-xl italic text-cream/75">a collection of poems</p>
-          <p className="mt-8 text-[0.7rem] uppercase tracking-[0.24em] text-cream/70">
-            Currently under consideration with publishers
+          <p className="font-display text-3xl italic leading-snug md:text-5xl">
+            Coming Soon. Darkscapes with Indigenous Light. Currently under consideration with
+            publishers.
           </p>
           <NotifyForm />
         </div>
