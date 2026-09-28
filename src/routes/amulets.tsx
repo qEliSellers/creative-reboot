@@ -7,7 +7,10 @@ export const Route = createFileRoute("/amulets")({
   head: () => ({
     meta: [
       { title: "Amulets — Wholly Creative" },
-      { name: "description", content: "Handcrafted talismans and small sacred objects by Marya Summers." },
+      {
+        name: "description",
+        content: "Handcrafted talismans and small sacred objects by Marya Summers.",
+      },
       { property: "og:title", content: "Amulets — Marya Summers" },
       { property: "og:description", content: "Handcrafted talismans and small sacred objects." },
       { property: "og:type", content: "website" },
@@ -69,7 +72,13 @@ function AmuletsPage() {
     <>
       <PageHeader
         eyebrow="Amulets & small sacred objects"
-        title={<>Stone, crystal, metal, silk.<br />Intention held close.</>}
+        title={
+          <>
+            Stone, crystal, metal, silk.
+            <br />
+            Intention held close.
+          </>
+        }
         intro="Each piece is made by hand in a small studio over the course of a week. Materials are sourced with well-being in mind. Nothing synthetic. Creations are wholly natural and fragrance-free to protect the most sensitive. While some designs may be similar, each amulet is one of a kind."
       />
 
@@ -85,7 +94,9 @@ function AmuletsPage() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActiveCategory(category.slug)}
-                  className={isActive ? "border-b border-gold pb-1 text-forest" : "pb-1 hover:text-gold"}
+                  className={
+                    isActive ? "border-b border-gold pb-1 text-forest" : "pb-1 hover:text-gold"
+                  }
                 >
                   {category.label}
                 </button>
@@ -97,11 +108,15 @@ function AmuletsPage() {
 
         {visibleProducts.length > 0 ? (
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-            {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+            {visibleProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
         ) : (
           <div className="border-y border-border py-16 text-center" role="tabpanel">
-            <p className="font-display text-2xl italic text-forest">{activeLabel} are coming soon.</p>
+            <p className="font-display text-2xl italic text-forest">
+              {activeLabel} are coming soon.
+            </p>
             <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-ink/65">
               New one-of-a-kind pieces will be added here as they become available.
             </p>
@@ -114,15 +129,18 @@ function AmuletsPage() {
           <div className="eyebrow">About the craft</div>
           <SpiralDivider className="mt-4 mb-8" />
           <p className="font-display text-2xl italic leading-snug text-forest md:text-3xl">
-            Each amulet is named, blessed, and packed in a small burlap pouch with a handwritten card
-            explaining its materials and how they support you.
+            Each amulet is named, blessed, and packed in a small burlap pouch with a handwritten
+            card explaining its materials and how they support you.
           </p>
           <p className="mt-6 text-sm leading-relaxed text-ink/75">
             Commissioned creations designed uniquely for you are available upon request.{" "}
-            <Link to="/contact" className="text-forest underline decoration-gold underline-offset-4 hover:text-gold">
+            <Link
+              to="/contact"
+              className="text-forest underline decoration-gold underline-offset-4 hover:text-gold"
+            >
               Contact Marya
-            </Link>
-            {" "}to begin. Shipping is slow and careful. Returns are simple — if the piece is not for
+            </Link>{" "}
+            to begin. Shipping is slow and careful. Returns are simple — if the piece is not for
             you, send it back within two weeks.
           </p>
         </div>

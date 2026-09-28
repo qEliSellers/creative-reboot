@@ -6,7 +6,6 @@ import {
   useRouter,
   HeadContent,
   Scripts,
-  ScrollRestoration,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -81,23 +80,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Wholly Creative — Marya Summers" },
-      { name: "description", content: "Where story, spirit, and creativity meet. Writing, divination, amulets, and creative mentorship with Marya Summers." },
+      {
+        name: "description",
+        content:
+          "Where story, spirit, and creativity meet. Writing, divination, amulets, and creative mentorship with Marya Summers.",
+      },
       { name: "author", content: "Marya Summers" },
       { property: "og:title", content: "Wholly Creative — Marya Summers" },
-      { property: "og:description", content: "Where story, spirit, and creativity meet. Writing, divination, amulets, and creative mentorship with Marya Summers." },
+      {
+        property: "og:description",
+        content:
+          "Where story, spirit, and creativity meet. Writing, divination, amulets, and creative mentorship with Marya Summers.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Wholly Creative — Marya Summers" },
-      { name: "twitter:description", content: "Where story, spirit, and creativity meet. Writing, divination, amulets, and creative mentorship with Marya Summers." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/snIMvqZhkkeSvMW4RI98QvGhkfZ2/social-images/social-1782181790735-WC_Hero_socialShare_1200x630.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/snIMvqZhkkeSvMW4RI98QvGhkfZ2/social-images/social-1782181790735-WC_Hero_socialShare_1200x630.webp" },
+      {
+        name: "twitter:description",
+        content:
+          "Where story, spirit, and creativity meet. Writing, divination, amulets, and creative mentorship with Marya Summers.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/snIMvqZhkkeSvMW4RI98QvGhkfZ2/social-images/social-1782181790735-WC_Hero_socialShare_1200x630.webp",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/snIMvqZhkkeSvMW4RI98QvGhkfZ2/social-images/social-1782181790735-WC_Hero_socialShare_1200x630.webp",
+      },
     ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" },
-    ],
+    links: [{ rel: "stylesheet", href: appCss }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -125,7 +139,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <ScrollRestoration />
         <SiteHeader />
         <main className="flex-1">
           <Outlet />

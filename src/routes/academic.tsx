@@ -6,9 +6,17 @@ export const Route = createFileRoute("/academic")({
   head: () => ({
     meta: [
       { title: "Marya Summers Complete CV — Wholly Creative" },
-      { name: "description", content: "Academic writing, teaching, publications, and professional experience from Marya Summers." },
+      {
+        name: "description",
+        content:
+          "Academic writing, teaching, publications, and professional experience from Marya Summers.",
+      },
       { property: "og:title", content: "Marya Summers Complete CV" },
-      { property: "og:description", content: "Academic writing, teaching, publications, and professional experience from Marya Summers." },
+      {
+        property: "og:description",
+        content:
+          "Academic writing, teaching, publications, and professional experience from Marya Summers.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
