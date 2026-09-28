@@ -13,8 +13,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AcademicRouteImport } from './routes/academic'
 import { Route as AmuletsRouteImport } from './routes/amulets'
+import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DivinationRouteImport } from './routes/divination'
+import { Route as HomeRouteImport } from './routes/home'
 import { Route as MentorshipRouteImport } from './routes/mentorship'
 import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
 import { Route as WritingRouteImport } from './routes/writing'
@@ -39,6 +41,11 @@ const AmuletsRoute = AmuletsRouteImport.update({
   path: '/amulets',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApproachRoute = ApproachRouteImport.update({
+  id: '/approach',
+  path: '/approach',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -47,6 +54,11 @@ const ContactRoute = ContactRouteImport.update({
 const DivinationRoute = DivinationRouteImport.update({
   id: '/divination',
   path: '/divination',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MentorshipRoute = MentorshipRouteImport.update({
@@ -70,8 +82,10 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/academic': typeof AcademicRoute
   '/amulets': typeof AmuletsRoute
+  '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/divination': typeof DivinationRoute
+  '/home': typeof HomeRoute
   '/mentorship': typeof MentorshipRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/writing': typeof WritingRoute
@@ -81,8 +95,10 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/academic': typeof AcademicRoute
   '/amulets': typeof AmuletsRoute
+  '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/divination': typeof DivinationRoute
+  '/home': typeof HomeRoute
   '/mentorship': typeof MentorshipRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/writing': typeof WritingRoute
@@ -93,8 +109,10 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/academic': typeof AcademicRoute
   '/amulets': typeof AmuletsRoute
+  '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/divination': typeof DivinationRoute
+  '/home': typeof HomeRoute
   '/mentorship': typeof MentorshipRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/writing': typeof WritingRoute
@@ -106,8 +124,10 @@ export interface FileRouteTypes {
     | '/about'
     | '/academic'
     | '/amulets'
+    | '/approach'
     | '/contact'
     | '/divination'
+    | '/home'
     | '/mentorship'
     | '/work-with-me'
     | '/writing'
@@ -117,8 +137,10 @@ export interface FileRouteTypes {
     | '/about'
     | '/academic'
     | '/amulets'
+    | '/approach'
     | '/contact'
     | '/divination'
+    | '/home'
     | '/mentorship'
     | '/work-with-me'
     | '/writing'
@@ -128,8 +150,10 @@ export interface FileRouteTypes {
     | '/about'
     | '/academic'
     | '/amulets'
+    | '/approach'
     | '/contact'
     | '/divination'
+    | '/home'
     | '/mentorship'
     | '/work-with-me'
     | '/writing'
@@ -140,8 +164,10 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AcademicRoute: typeof AcademicRoute
   AmuletsRoute: typeof AmuletsRoute
+  ApproachRoute: typeof ApproachRoute
   ContactRoute: typeof ContactRoute
   DivinationRoute: typeof DivinationRoute
+  HomeRoute: typeof HomeRoute
   MentorshipRoute: typeof MentorshipRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
   WritingRoute: typeof WritingRoute
@@ -177,6 +203,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AmuletsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/approach': {
+      id: '/approach'
+      path: '/approach'
+      fullPath: '/approach'
+      preLoaderRoute: typeof ApproachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -189,6 +222,13 @@ declare module '@tanstack/react-router' {
       path: '/divination'
       fullPath: '/divination'
       preLoaderRoute: typeof DivinationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mentorship': {
@@ -220,8 +260,10 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AcademicRoute: AcademicRoute,
   AmuletsRoute: AmuletsRoute,
+  ApproachRoute: ApproachRoute,
   ContactRoute: ContactRoute,
   DivinationRoute: DivinationRoute,
+  HomeRoute: HomeRoute,
   MentorshipRoute: MentorshipRoute,
   WorkWithMeRoute: WorkWithMeRoute,
   WritingRoute: WritingRoute,
