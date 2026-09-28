@@ -1,11 +1,5 @@
-import logoAsset from "@/assets/wholly-creative-logo.png.asset.json";
+import logoAsset from "@/assets/wholly-creative-logo.webp";
 
 export function Logo({ className = "" }: { className?: string }) {
-  return (
-    <img
-      src={logoAsset.url}
-      alt="Wholly Creative"
-      className={`h-14 w-auto ${className}`}
-    />
-  );
+  return <img src={logoAsset} alt="Wholly Creative" className={`h-14 w-auto ${className}`} />;
 }

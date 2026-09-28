@@ -8,7 +8,10 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Wholly Creative" },
-      { name: "description", content: "Write to Marya Summers about mentorship, divination, amulets, or speaking." },
+      {
+        name: "description",
+        content: "Write to Marya Summers about mentorship, divination, amulets, or speaking.",
+      },
       { property: "og:title", content: "Contact Marya Summers" },
       { property: "og:description", content: "Write to Marya. She reads every letter." },
     ],
@@ -45,7 +48,7 @@ function ContactPage() {
     const subject = doorway ? `Wholly Creative — ${doorway}` : "Wholly Creative — a letter";
     const body = `${message}\n\n— ${name}\n${email}`;
     window.location.href = `mailto:marya@whollycreative.com?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
   };
 
@@ -53,7 +56,13 @@ function ContactPage() {
     <>
       <PageHeader
         eyebrow="Write to me"
-        title={<>Tell me what<br /><em className="italic text-teal">you're carrying.</em></>}
+        title={
+          <>
+            Tell me what
+            <br />
+            <em className="italic text-teal">you're carrying.</em>
+          </>
+        }
         intro="I read every letter. I answer most within the week. If your message is urgent, say so — and forgive me for taking the time the work deserves."
       />
 
@@ -90,7 +99,9 @@ function ContactPage() {
               value={doorway}
               onChange={(e) => setDoorway(e.target.value)}
             >
-              <option value="" disabled>Choose a doorway</option>
+              <option value="" disabled>
+                Choose a doorway
+              </option>
               <option>A divination session</option>
               <option>Creative mentorship</option>
               <option>A custom amulet</option>
@@ -110,7 +121,9 @@ function ContactPage() {
             />
           </Field>
           {error && (
-            <p className="text-sm text-red-700" role="alert">{error}</p>
+            <p className="text-sm text-red-700" role="alert">
+              {error}
+            </p>
           )}
           <div className="flex items-center justify-between gap-4 pt-2">
             <p className="text-xs italic text-ink/55">
@@ -124,7 +137,10 @@ function ContactPage() {
           <div>
             <div className="eyebrow">Direct</div>
             <SpiralDivider className="mt-4 mb-6 justify-start" />
-            <a href="mailto:marya@whollycreative.com" className="font-display text-2xl text-forest hover:text-gold">
+            <a
+              href="mailto:marya@whollycreative.com"
+              className="font-display text-2xl text-forest hover:text-gold"
+            >
               marya@whollycreative.com
             </a>
           </div>

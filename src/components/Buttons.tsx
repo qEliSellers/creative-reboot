@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-const base =
-  "inline-flex items-center rounded-full font-sans uppercase transition-all";
+const base = "inline-flex items-center rounded-full font-sans uppercase transition-all";
 const sizeMd = "gap-3 px-7 py-3.5 text-[0.72rem] tracking-[0.24em]";
 const sizeSm = "gap-2 px-5 py-2.5 text-[0.65rem] tracking-[0.22em]";
 

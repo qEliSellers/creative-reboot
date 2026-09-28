@@ -25,13 +25,17 @@ export function SiteFooter() {
                 ],
                 [
                   ["/work-with-me", "Work with Me"],
+                  ["/approach", "My Approach"],
                   ["/contact", "Contact"],
                 ],
               ].map((col, i) => (
                 <ul key={i} className="space-y-3 text-sm">
                   {col.map(([to, label]) => (
                     <li key={to}>
-                      <Link to={to} className="text-cream/80 transition-colors hover:text-gold-soft">
+                      <Link
+                        to={to}
+                        className="text-cream/80 transition-colors hover:text-gold-soft"
+                      >
                         {label}
                       </Link>
                     </li>

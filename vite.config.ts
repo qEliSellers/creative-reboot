@@ -12,4 +12,14 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Sandbox gateway: Caddy proxies the preview URL to localhost:3000.
+    // Lovable's config defaults to port 8080 outside its own sandbox, so pin 3000 here.
+    server: {
+      host: "::",
+      port: 3000,
+      strictPort: true,
+      allowedHosts: true,
+    },
+  },
 });
