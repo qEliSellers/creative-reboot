@@ -97,8 +97,17 @@ function Home() {
             meaningful ideas to life through writing, intuitive guidance, handcrafted amulets, and
             creative mentorship.
           </p>
-          <div className="mt-10">
-            <PrimaryLink to="/about">Explore my work</PrimaryLink>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <PrimaryLink to="/approach">Explore the Method</PrimaryLink>
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              title="Booking will open when Cal.com is connected"
+              className="inline-flex cursor-not-allowed items-center rounded-full border border-forest/35 px-7 py-3.5 font-sans text-[0.72rem] uppercase tracking-[0.24em] text-forest/45"
+            >
+              Begin the Journey
+            </button>
           </div>
         </div>
         <div className="relative">

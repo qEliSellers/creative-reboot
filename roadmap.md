@@ -5,3 +5,5 @@
 - [x] Link commissioned creations to Contact.
 - [x] Add the held Academic Writing / Complete CV page and link it from Writing.
 - [x] Verify desktop and mobile navigation, layouts, and error state.
+- [x] Add the final Darkscapes notice and interim Notify Me email action on Writing.
+- [x] Add Home actions for the Method and the future Cal.com booking flow.
